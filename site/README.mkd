@@ -1,0 +1,79 @@
+neutraldesk theme
+=================
+A theme for yii powered web applications 
+Author: Dimitrios Mengidis <tydeas.dr at gmail.com>
+
+###Details 
+A theme for Personal sites and blogs.
+From the tree structure of the zip __css, images and js copyrights does not belong to the author.__ 
+License of this files is in the <code>./css/neutraldesk/readme-license-hotwebsitetemplates.txt</code> 
+as the source of the theme is in the <code>./source/neutraldesk.zip</code>
+
+###Install
+
+~~~
+.
+|-- css
+|   `-- neutraldesk
+|       |-- images
+|       |   |-- about_1.gif
+|       |   |-- bg_img.gif
+|       |   |-- fbg_1.gif
+|       |   |-- fbg_2.jpg
+|       |   |-- fbg_3.jpg
+|       |   |-- fbg_4.jpg
+|       |   |-- fbg_5.jpg
+|       |   |-- fbg_6.jpg
+|       |   |-- fbg_7.jpg
+|       |   |-- header_bg.gif
+|       |   |-- img_1.gif
+|       |   |-- img_2.gif
+|       |   |-- img_main.jpg
+|       |   |-- logo.gif
+|       |   |-- reading.gif
+|       |   |-- search_bg.gif
+|       |   |-- search.gif
+|       |   |-- ul_li_2.gif
+|       |   |-- ul_li.gif
+|       |   `-- view_ga.gif
+|       |-- js
+|       |   |-- arial.js
+|       |   |-- cufon-yui.js
+|       |   |-- cuf_run.js
+|       |   |-- custom.js
+|       |   `-- jquery.js
+|       |-- readme-license-hotwebsitetemplates.txt
+|       `-- style.css
+|-- README.mkd
+|-- source
+|   `-- neutraldesk.zip
+`-- themes
+    `-- neutraldesk
+        `-- views
+            |-- layouts
+            |   |-- column1.php
+            |   |-- column2.php
+            |   `-- main.php
+            `-- site
+                |-- contact.php
+                |-- error.php
+                |-- login.php
+                `-- pages
+                    `-- about.php
+
+11 directories, 36 files
+~~~
+This is the tree structure of the zip file. Root of the tree structure is the root dir of your web application.
+
+In your <code>protected/config/main.php</code> add
+
+~~~
+<?php return array(
+    ...
+    'name'=>'Your application name',
+    'theme'=>'neutraldesk',
+    ...
+?>
+
+###Resource
+- [neutraldesk theme](http://www.free-css.com/free-css-templates/page2/neutraldesk.php), Personal, Blog. Creative Commons License  
