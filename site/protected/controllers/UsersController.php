@@ -85,7 +85,7 @@ class UsersController extends Controller {
                 $user = Users::model()->find('LOWER(user_name)=?', array($_POST['Users']['user_name']));
                 $msg = '<html><body>Thank you for registering at ' . Yii::app()->name . '.<br /><br />' . 'Please click ' .
                         CHtml::link(CHtml::encode('here'),
-                                Company::getComURL('GraphOX').'index.php/users/activate?activateKey='.$user->user_acti_pass, 
+                                Company::getComURL('GraphOX').'users/activate?activateKey='.$user->user_acti_pass, 
                                 array('title' => 'Click me to authenticate account')) . 
                         ' to activate your account.<br /><br />' .
                         'Thanks<br />' . Yii::app()->name . ' Administration</body></html>';

@@ -14,12 +14,16 @@ return array(
         'application.models.*',
         'application.components.*',
         'ext.yii-mail.*',
+        'ext.giix-components.*', // giix components
     ),
     'modules' => array(
         // uncomment the following to enable the Gii tool
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => 'justPass',
+            'generatorPaths' => array(
+                'ext.giix-core', // giix generators
+            ),
         ),
     ),
     // application components
@@ -83,12 +87,9 @@ return array(
         'webAdminEmail' => 'webadmin@graphox.us',
         // the following *has* to have both values in, else set to defaults
         // you may also delete the following, setting it to defaults
-        // it is basically a list of companies based on this framework
         'company' => array(
-            'GraphOX' => array(
-                'companyURL' => 'http://graphox.us/',
-                'companyName' => 'GraphOX',
-            ),
+            'companyURL' => 'http://graphox.us/',
+            'companyName' => 'GraphOX',
         )
     ),
 );

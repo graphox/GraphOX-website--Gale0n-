@@ -44,20 +44,27 @@ class LoginForm extends CFormModel {
     public function authenticate($attribute, $params) {
         if (!$this->hasErrors()) {
             $this->_identity = new UserIdentity($this->username, $this->password);
-            $user = Users::model()->find('LOWER(user_name)=?', array($this->username));;
-            switch ($user->user_acti) {
-                case 0:
-                    $this->addError('username', 'Account disabled');
+            $user = Users::model()->find('LOWER(user_name)=?', array($this->username));
+            switch ($user) {
+                case true:
+                    switch ($user->user_acti) {
+                        case 0:
+                            $this->addError('username', 'Account disabled');
+                            break;
+                        case 1:
+                            $this->addError('username', 'Account not activated yet');
+                            break;
+                        case 2:
+                            $this->addError('username', 'Account suspended');
+                            break;
+                        default:
+                            if (!$this->_identity->authenticate())
+                                $this->addError('password', 'Incorrect password.');
+                            break;
+                    }
                     break;
-                case 1:
-                    $this->addError('username', 'Account not activated yet');
-                    break;
-                case 2:
-                    $this->addError('username', 'Account suspended');
-                    break;
-                default:
-                    if (!$this->_identity->authenticate())
-                        $this->addError('password', 'Incorrect username or password.');
+                case false:
+                    $this->addError('username', 'Incorrect username');
                     break;
             }
         }
